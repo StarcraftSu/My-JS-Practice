@@ -1,0 +1,69 @@
+
+header{
+	width: 60%;
+	margin-left: 20%;
+	margin-top: 3%;
+	margin-bottom: 2%;
+	text-align: center;
+	color: #666;
+	background-color: cornflowerblue;
+	box-shadow: 0 1 2px #333;
+	border-radius: 5px;
+}
+header .container{
+	padding:0;
+}
+header h1{
+	margin-bottom: 2%;
+}
+
+header .btn{
+	margin-bottom: 3%;
+	width:25%;
+}
+
+main .container{
+	padding:0;
+
+}
+
+main .panel{
+	text-align: center;
+}
+#panel5{
+	color: white;
+	background-color: #999;
+}
+
+main .firstUL{
+	position: relative;
+	left:25px;
+	bottom: 20px;
+}
+
+main .firstUL li{
+	padding-top: 5px;
+}
+
+main .firstUL,.secondUL{
+	display: inline-block;
+	text-align: left;
+	list-style: none;
+}
+
+main .secondUL{
+	position: relative;
+	right:40px;
+}
+
+main .secondUL li{
+	padding-top: 10px;
+}
+
+main .glyphicon-globe{
+	color:green;
+}
+
+main .special{
+	color: blue;
+}

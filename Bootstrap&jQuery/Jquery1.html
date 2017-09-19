@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jquery 1</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<h1>Let's get Jquery done!</h1>
+			<div class="row">
+				<div class="col-sm-3">
+					<button class="btn btn-primary" id="btn-1" data-panelid="panel1">P1</button>
+				</div>
+				<div class="col-sm-3">
+					<button class="btn btn-default" id="btn-2" data-panelid="panel2">P2</button>
+				</div>
+				<div class="col-sm-3">
+					<button class="btn btn-success" id="btn-3" data-panelid="panel3">P3</button>
+				</div>
+				<div class="col-sm-3">
+					<button class="btn btn-danger"  id="btn-4" data-panelid="panel4">P4</button>
+				</div>
+			</div>
+		</div>	
+	</header>
+	<main>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="panel panel-success"  id="panel1">
+						<div class="panel-heading">Widget 1
+							<div class="panel-body">
+								<p>Panel Plunk</p>
+								<a href="#" class="btn btn-primary"><i class="glyphicon glyphicon-tag"></i> Success</a>
+							</div>
+						</div>		
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="panel panel-success" id="panel2">
+						<div class="panel-heading">Widget 2
+							<div class="panel-body">
+								<p>Panel LeeBlank</p>
+								<a href="#" class="btn btn-default"><i class="glyphicon glyphicon-bell"></i> Success</a>
+							</div>
+						</div>		
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="panel panel-success" id="panel3">
+						<div class="panel-heading">Widget 3
+							<div class="panel-body">
+								<p>Panel Stunk</p>
+								<a href="#" class="btn btn-success"><i class="glyphicon glyphicon-time"></i> Success</a>
+							</div>
+						</div>		
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="panel panel-success" id="panel4">
+						<div class="panel-heading">Widget 4
+							<div class="panel-body">
+								<p>Panel Drunk</p>
+								<a href="#" class="btn btn-danger"><i class="glyphicon glyphicon-music"></i> Success</a>      <!--  glyphicon glyphicon-xxx add the icon -->
+							</div>
+						</div>		
+					</div>
+				</div>
+			</div>
+			<div class="listTest">
+				<div class="col-sm-12">
+					<div class="panel" id="panel5">
+						<div class="panel-heading">
+								<h3>List</h3>
+							<div class="panel-body">
+								<ul class="firstUL">																<!-- parent 3 -->													
+								<h4>MainList</h4>
+									<li class="special">One</li>
+									<li>Two</li>
+									<li>																			<!-- parent 2 -->
+										<ul class="secondUL">														<!-- parent 1 -->	
+										<span>SecondaryList</span>                                                  <!-- children 1 -->   
+											<li><i class="glyphicon glyphicon-globe"></i>1.Mercury</li>				<!-- children 2 --> 
+											<li><i class="glyphicon glyphicon-globe"></i>2.Venus</li>				<!-- children 3 --> 
+											<li><i class="glyphicon glyphicon-globe"></i>3.Earth</li>				<!-- children 4 -->
+											<li><i class="glyphicon glyphicon-globe"></i>4.Mars</li>				<!-- children 5 -->
+										</ul>
+									</li>
+								</ul>	
+							</div>
+						</div>		
+					</div>
+				</div>
+			</div>
+		</div>	
+	</main>
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){                                         //Prepare for the entire web is loaded
+			$('button').on('click',function(){								  //There goes the event 'click'	
+				var panelID=$(this).attr('data-panelid');					  //This is the object that you 'click', attr()helps to get the panel ID that will be manipulated
+				console.log(panelID);										  //Show ID on console	
+				$('#'+panelID+" .panel-body").slideToggle(1000);			  //Use another selector to target the panel and slide up and down in 1sec.	
+			})
+		// $('li').on('mouseover',function(){
+		// 	$(this).removeClass('special');
+		// 	$(this).siblings().addClass('special');
+		// })
+
+		$('li').on('click',function(){
+			$(this).filter(this).addClass('special');	
+		})
+		});
+	</script>
+</body>
+</html>
