@@ -14,10 +14,10 @@
 <div class="container">
 	<header class="navbar navbar-inverse" role="banner">
 			<p id="main-title"><i class="fa fa-leaf"></i>表单下拉菜单练习</p>
-			<p id="author">by StarCraft.Su</p>	
+			<p id="author">by StarCraft.Su</p>
 	</header>
 </div>
-<div class="container">	
+<div class="container">
 	<main>
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -26,19 +26,59 @@
 			<div class="panel-body">
 				<div class="row">
 					<div class="col-sm-6">
-						A
+						<h5>选择你擅长的位置:</h5>
+						<select name="mainSelect" id="mainSelect">
+								<option value=""></option>
+								<option value="ADC">ADC</option>
+								<option value="Mid">Mid</option>
+								<option value="Top">Top</option>
+						</select>
 					</div>
 					<div class="col-sm-6">
-						B
+						<h5>选择你擅长的英雄:</h5>
+						<select name="subSelect" id="subSelect"></select>
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</main>
-</div>	
+</div>
 	<footer></footer>
+	<script>
+		var mainSelect = document.querySelector('#mainSelect');
+		mainSelect.addEventListener('change',populate);
+		function populate(){
+			var e1 = document.querySelector('#mainSelect');
+			var e2 = document.querySelector('#subSelect');
+			e2.innerHTML = "";
+			if(e1.value === "ADC"){
+				var optionArray = ['miss.fortune|Miss.Fortune','varus|Varus','ezreal|Ezreal'];
+			}
+			else if(e1.value === "Mid"){
+				var optionArray = ['lux|Lux','zed|Zed','oriana|Oriana'];
+			}
+			else if(e1.value === "Top"){
+				var optionArray = ['teemo|Teemo','shen|Shen','jax|Jax'];
+			}
+
+
+
+			for(var x in optionArray){
+				console.log(typeof(optionArray[x]));
+				var keyValue = optionArray[x].split('|');
+				var newOption = document.createElement('option');
+				newOption.value = keyValue[0];
+				newOption.innerHTML = keyValue[1];
+				//集合可返回包含 <select> 元素中所有 <option> 的一个数组
+				//语法selectObject.options[]
+				e2.options.add(newOption);
+			}
+
+
+		}
+
+	</script>
 	<script src="https://cdn.bootcss.com/jquery/1.12.0/jquery.js"></script>
 	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>
-

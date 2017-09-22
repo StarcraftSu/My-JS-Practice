@@ -40,3 +40,10 @@ main {
 main .description{
 	text-align: center;
 }
+
+#mainSelect,#subSelect{
+	margin-top:5px;
+	width: 90%;
+	color: cornflowerblue;
+}
+#
